@@ -1,4 +1,45 @@
+:root {
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  height: 100%;
+}
+
 .App {
   font-family: sans-serif;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  height: 100%;
+}
+
+.App-darkMode {
+  position: fixed;
+  top: 0;
+  right: 0;
+  background: transparent;
+  border: none;
+}
+
+.dark-mode .App-darkMode {
+  color: #fff;
+}
+
+body {
+  transition: background-color 0.3s ease;
+}
+
+body.light-mode {
+  background-color: #fff;
+  color: #333;
+}
+
+body.dark-mode {
+  background-color: #1a1919;
+  color: #999;
 }
