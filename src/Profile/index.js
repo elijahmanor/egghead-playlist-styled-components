@@ -1,7 +1,15 @@
 import React, { useState } from "react";
 import classNames from "classnames";
 
-import "./styles.css";
+import {
+	StyledProfile,
+	Background,
+	Header,
+	Avatar,
+	FullName,
+	UserName,
+	Bio,
+} from "./styles";
 
 const FILTERS = [
 	"grayscale(1)",
@@ -13,34 +21,31 @@ const FILTERS = [
 ];
 
 export default function Profile({ className, user }) {
-	const classes = classNames("Profile", className);
 	const [filterIndex, setFilterIndex] = useState(0);
 	const changeType = () => {
 		setFilterIndex((filterIndex + 1) % FILTERS.length);
 	};
 	return (
-		<div className={classes}>
-			<div
+		<StyledProfile className={className}>
+			<Background
 				onClick={changeType}
-				className="Profile-background"
 				style={{
 					backgroundImage: `url(${user.backgroundUrl})`,
 					filter: FILTERS[filterIndex],
 				}}
 			/>
-			<header className="Profile-header">
-				<img className="Profile-avatar" src={user.avatar} alt={user.name} />
+			<Header>
+				<Avatar src={user.avatar} alt={user.name} />
 				<div>
-					<div className="Profile-fullName">{user.name}</div>
-					<div className="Profile-userName">@{user.username}</div>
+					<FullName>{user.name}</FullName>
+					<UserName>@{user.username}</UserName>
 				</div>
-			</header>
-			<div
-				className="Profile-bio"
+			</Header>
+			<Bio
 				dangerouslySetInnerHTML={{
 					__html: user.aboutMe,
 				}}
 			/>
-		</div>
+		</StyledProfile>
 	);
 }
