@@ -7,6 +7,7 @@ export const StyledProfile = styled.div`
 	max-width: 400px;
 	border: 1px solid black;
 	overflow: hidden;
+	margin: 0 1rem;
 `;
 
 export const Background = styled.div`
@@ -39,22 +40,20 @@ export const Avatar = styled.img`
 	}
 `;
 
-export const FullName = styled.div`
-	font-size: 1.6rem;
-	font-weight: bold;
-	margin-bottom: 0.5rem;
-
+export const Names = styled.div`
 	@media (max-width: 21rem) {
 		text-align: center;
 	}
 `;
 
+export const FullName = styled.div`
+	font-size: 1.6rem;
+	font-weight: bold;
+	margin-bottom: 0.5rem;
+`;
+
 export const UserName = styled.div`
 	color: #999;
-
-	@media (max-width: 21rem) {
-		text-align: center;
-	}
 `;
 
 export const Bio = styled.div`

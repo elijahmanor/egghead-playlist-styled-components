@@ -6,6 +6,7 @@ import {
 	Background,
 	Header,
 	Avatar,
+	Names,
 	FullName,
 	UserName,
 	Bio,
@@ -36,10 +37,10 @@ export default function Profile({ className, user }) {
 			/>
 			<Header>
 				<Avatar src={user.avatar} alt={user.name} />
-				<div>
+				<Names>
 					<FullName>{user.name}</FullName>
 					<UserName>@{user.username}</UserName>
-				</div>
+				</Names>
 			</Header>
 			<Bio
 				dangerouslySetInnerHTML={{
