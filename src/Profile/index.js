@@ -20,10 +20,17 @@ const FILTERS = [
 	"contrast(4)",
 ];
 
-export default function Profile({ className, user }) {
-	const [filterIndex, setFilterIndex] = useState(0);
+export default function Profile({
+	className,
+	user,
+}) {
+	const [filterIndex, setFilterIndex] = useState(
+		0
+	);
 	const changeType = () => {
-		setFilterIndex((filterIndex + 1) % FILTERS.length);
+		setFilterIndex(
+			(filterIndex + 1) % FILTERS.length
+		);
 	};
 	return (
 		<StyledProfile className={className}>
@@ -35,7 +42,10 @@ export default function Profile({ className, user }) {
 				}}
 			/>
 			<Header>
-				<Avatar src={user.avatar} alt={user.name} />
+				<Avatar
+					src={user.avatar}
+					alt={user.name}
+				/>
 				<Names>
 					<FullName>{user.name}</FullName>
 					<UserName>@{user.username}</UserName>
